@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS links (
+    id TEXT PRIMARY KEY,
+    path TEXT NOT NULL UNIQUE,
+    target TEXT NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX idx_links_path ON links(path);
